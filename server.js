@@ -5,7 +5,7 @@ const compression = require("compression");
 
 const PORT = process.env.PORT || 3001;
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/budget";
-
+// mongodb+srv://adminMax:rootroot@cluster0.u9nqh.mongodb.net/budget?retryWrites=true&w=majority
 const app = express();
 
 app.use(logger("dev"));
