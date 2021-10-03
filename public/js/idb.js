@@ -22,6 +22,16 @@ request.onerror = function(event) {
     console.log("request failed");
     };
 
+function saveRecord(record) {
+    const transaction = db.transaction(['new_entry'], 'readwrite');
+
+    const entryObjectStore = transaction.objectStore('new_entry');
+    // console.log(record);
+
+    // add record to your store with add method.
+    entryObjectStore.add(record);
+}
+
 function uploadEntry() {
         // open a transaction on your pending db
     const transaction = db.transaction(['new_entry'], 'readwrite');

@@ -121,10 +121,12 @@ function sendTransaction(isAdding) {
       "Content-Type": "application/json"
     }
   })
-  .then(response => {    
+  .then(response => {
     return response.json();
   })
   .then(data => {
+    // console.log(data['value']);
+    alert(data['value']);
     if (data.errors) {
       errorEl.textContent = "Missing Information";
     }
@@ -135,6 +137,7 @@ function sendTransaction(isAdding) {
     }
   })
   .catch(err => {
+    console.log("You're offline but your transaction was logged!")
     // fetch failed, so save in indexed db
     saveRecord(transaction);
 
