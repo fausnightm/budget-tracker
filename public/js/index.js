@@ -137,7 +137,7 @@ function sendTransaction(isAdding) {
     }
   })
   .catch(err => {
-    console.log("You're offline but your transaction was logged!")
+    alert("You're offline but your transaction was logged!");
     // fetch failed, so save in indexed db
     saveRecord(transaction);
 
